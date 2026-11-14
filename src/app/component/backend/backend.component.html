@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h5 class="text-warning">By *ngFor(Refactoring) : </h5>
+            <div class="card">
+                <div class = "card-body">
+                    <ul class="nav nav-pills ml-5">
+                        <li class="nav-items" *ngFor="let skill of skills">
+                            <a class="nav-link" href="javaScript:;"
+                            (click)="onSelectSkill(skill.name)"
+                            [ngClass]="{
+                                'active' : selectedSkill.includes(skill.name)
+                            }">{{skill.name | titlecase}}</a>
+                        </li>
+                    </ul>
+
+                    <div class="card mt-3">
+                        <div class="card-body p-2" *ngFor="let skill2 of skills">
+                            <p *ngIf="selectedSkill.includes(skill2.name)"> {{skill2.description}} </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 text-center">
+            <div class="card mt-2 shadow">
+                <div class="card-body">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link"
+                            [ngClass]="{
+                                'active' : labSkills.includes('angular')
+                            }"
+                            (click)="onSelectSkill('angular')"
+                            >
+                                Angular
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:;" class="nav-link"
+                            [ngClass]="{
+                                'active' : labSkills.includes('node')
+                            }"
+                            (click)="onSelectSkill('node')">
+                                Node
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:;" class="nav-link"
+                            [ngClass]="{
+                                'active' : labSkills.includes('mongodb')
+                            }"
+                            (click)="onSelectSkill('mongodb')">
+                                MongoDb
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:;" class="nav-link"
+                            [ngClass]="{
+                                'active' : labSkills.includes('express.js')
+                            }"
+                            (click)="onSelectSkill('express.js')">
+                                express.Js
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="card mt-3">
+                        <div class="card-body"
+                        *ngIf="labSkills.includes('angular')">
+                            <strong>Angular</strong>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum suscipit autem natus quaerat
+                            dicta quasi dolore, atque aliquid consequatur pariatur soluta quam officiis, assumenda
+                            aspernatur ipsum hic architecto molestias. Aut.
+                        </div>
+                        <div class="card-body"
+                        *ngIf="labSkills.includes('node')">
+                            <strong>Node</strong>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum suscipit autem natus quaerat
+                            dicta quasi dolore, atque aliquid consequatur pariatur soluta quam officiis, assumenda
+                            aspernatur ipsum hic architecto molestias. Aut.
+                        </div>
+                        <div class="card-body" *ngIf="labSkills.includes('mongodb')"
+                        >
+                            <strong>MongoDb</strong>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum suscipit autem natus quaerat
+                            dicta quasi dolore, atque aliquid consequatur pariatur soluta quam officiis, assumenda
+                            aspernatur ipsum hic architecto molestias. Aut.
+                        </div>
+                        <div class="card-body" *ngIf="labSkills.includes('express.js')">
+                            <strong>ExpressJs</strong>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum suscipit autem natus quaerat
+                            dicta quasi dolore, atque aliquid consequatur pariatur soluta quam officiis, assumenda
+                            aspernatur ipsum hic architecto molestias. Aut.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

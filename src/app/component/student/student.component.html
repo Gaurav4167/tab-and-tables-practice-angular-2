@@ -1,0 +1,36 @@
+<h4>----------------------------------------------------</h4>
+<h3>Hello My name is {{sName}} , I am from Student Component</h3>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div>
+                <label for="sName"><b>Name:</b> </label>
+                <input #studentName class="form-control " type="text" value="" id="sName" placeholder="Student Name">
+            </div>
+        </div>
+        <div class="col-md-6 offset-md-3">
+            <label for="course"><b>Course:</b> </label>
+            <input #course class="form-control " type="text" value="" id="course" placeholder="Enter Course Name">
+        </div>
+        <div class="col-md-6 offset-md-3">
+            <button class="btn btn-primary mt-2" (click)="onNewStudentAdd(studentName,course)">Add Student</button>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-6 offset-md-3" *ngIf="sName else noStudent">
+            <p class="text-success alert alert-info"> Student {{sName}} has joined the course {{sCourse}} !!! </p>
+        </div>
+        <ng-template #noStudent>
+            <div class="col-md-6 offset-md-3">
+
+                <p class="text-success alert alert-info"> No student Added or searched</p>
+            </div>
+
+        </ng-template>
+    </div>
+</div>

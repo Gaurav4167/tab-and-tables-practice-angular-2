@@ -1,0 +1,788 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h4 class="text-danger"><b>Employee Data Table:</b></h4>
+            <table class="table">
+                <thead class="badge-success">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Designation</th>
+                        <th>Department</th>
+                        <th>Salary</th>
+                        <th>IsPermanent</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let emp of emps">
+                        <td> {{emp.empId}} </td>
+                        <td> {{emp.empName}} </td>
+                        <td> {{emp.designation}} </td>
+                        <td> {{emp.department}} </td>
+                        <td> {{emp.salary}} </td>
+                        <td class="text-center">
+                            <span class="bagde p-2" [ngClass]="{
+                            'badge-success' : emp.isPermanent,
+                            'badge-danger' : !emp.isPermanent
+                        }"> {{emp.isPermanent ? "Yes" : "No"}} </span>
+                        </td>
+                        <td> {{emp.email}} </td>
+                        <td> {{emp.contact}} </td>
+                        <td>
+                            <button class="text-warning" matFab aria-label="Example icon button with a delete icon">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                        </td>
+                        <td> <button class="text-danger" matFab aria-label="Example icon button with a delete icon">
+                                <mat-icon>delete</mat-icon>
+                            </button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 class="text-warning"><b>Student Data Table:</b></h4>
+            <table class="table">
+                <thead class="badge-danger">
+                    <tr>
+                        <th>RollNo.</th>
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>Year</th>
+                        <th class="text-center">Percentage (%)</th>
+                        <th>is Passed?</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let std of stds">
+                        <td> {{std.rollNo}} </td>
+                        <td> {{std.name}} </td>
+                        <td> {{std.course}} </td>
+                        <td> {{std.year}} </td>
+                        <td> {{std.percentage}} </td>
+                        <td class="text-center">
+                            <span class="bagde p-2" [ngClass]="{
+                            'badge-success' : std.isPassed,
+                            'badge-danger' : !std.isPassed
+                        }"> {{std.isPassed ? "Yes" : "No"}} </span>
+                        </td>
+                        <td> {{std.email}} </td>
+                        <td> {{std.contact}} </td>
+                        <td>
+                            <button class="text-warning" matFab aria-label="Example icon button with a delete icon">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                        </td>
+                        <td> <button class="text-danger" matFab aria-label="Example icon button with a delete icon">
+                                <mat-icon>delete</mat-icon>
+                            </button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="text-danger"><b>Product Data Table:</b></h4>
+            <table class="table">
+                <thead class="badge-secondary">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>IsAvailable</th>
+                        <th>Brand</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <td> {{product.prodId}} </td>
+                        <td> {{product.prodName}} </td>
+                        <td> {{product.category}} </td>
+                        <td> {{product.price}} </td>
+                        <td> {{product.stock}} </td>
+                        <td class="text-center">
+                            <span class="bagde p-2" [ngClass]="{
+                            'badge-success' : product.isAvailable,
+                            'badge-danger' : !product.isAvailable
+                        }"> {{product.isAvailable? "Yes" : "No"}} </span>
+                        </td>
+                        <td> {{product.brand}} </td>
+                        <td>
+                            <button class="text-warning" matFab aria-label="Example icon button with a delete icon">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                        </td>
+                        <td> <button class="text-danger" matFab aria-label="Example icon button with a delete icon">
+                                <mat-icon>delete</mat-icon>
+                            </button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="text-success"> <b>Course Data Table:</b> </h4>
+            <table class="table">
+                <thead class="badge-warning">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Duration</th>
+                        <th>Fees</th>
+                        <th>Mode</th>
+                        <th>Is Active</th>
+                        <th>Trainer</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let course of courses">
+                        <td> {{course.courseId}} </td>
+                        <td> {{course.courseName}} </td>
+                        <td> {{course.duration}} </td>
+                        <td> {{course.fees}} </td>
+                        <td> {{course.mode}} </td>
+                        <td class="text-center">
+                            <span class="bagde p-2" [ngClass]="{
+                            'badge-success' : course.isActive,
+                            'badge-danger' : !course.isActive
+                        }"> {{course.isActive ? "Yes" : "No"}} </span>
+                        </td>
+                        <td> {{course.trainer}} </td>
+                        <td>
+                            <button class="text-warning" matFab aria-label="Example icon button with a delete icon">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                        </td>
+                        <td> <button class="text-danger" matFab aria-label="Example icon button with a delete icon">
+                                <mat-icon>delete</mat-icon>
+                            </button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 class="text-secondary"><b>Books Data Table:</b></h4>
+            <table class="table">
+                <thead class="badge-success">
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Price</th>
+                        <th>Pages</th>
+                        <th>IsAvailable</th>
+                        <th>Type</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let book of books">
+                        <td> {{book.bookId}} </td>
+                        <td> {{book.title}} </td>
+                        <td> {{book.author}} </td>
+                        <td> {{book.price}} </td>
+                        <td> {{book.pages}} </td>
+                        <td class="text-center">
+                            <span class="bagde p-2" [ngClass]="{
+                            'badge-success' : book.isAvailable,
+                            'badge-danger' : !book.isAvailable
+                        }"> {{book.isAvailable ? "Yes" : "No"}} </span>
+                        </td>
+                        <td> {{book.genre}} </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-warning">edit</mat-chip>
+                            </mat-chip-list>
+
+                        </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-danger text-white">delete</mat-chip>
+                            </mat-chip-list>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 class="text-primary"><b>Customers Data Table:</b></h4>
+            <table class="table">
+                <thead class="badge-primary">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>City</th>
+                        <th>Age</th>
+                        <th>Email</th>
+                        <th>IsPrime</th>
+                        <th>Contact</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let customer of customers">
+                        <td> {{customer.custId}} </td>
+                        <td> {{customer.name}} </td>
+                        <td> {{customer.city}} </td>
+                        <td> {{customer.age}} </td>
+                        <td> {{customer.email}} </td>
+                        <td class="text-center">
+                            <span class="bagde p-2" [ngClass]="{
+                            'badge-success' : customer.isPrime,
+                            'badge-danger' : !customer.isPrime
+                        }"> {{customer.isPrime ? "Yes" : "No"}} </span>
+                        </td>
+                        <td> {{customer.contact}} </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-primary text-white">edit</mat-chip>
+                            </mat-chip-list>
+
+                        </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-danger text-white">delete</mat-chip>
+                            </mat-chip-list>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="text-danger"><b>Orders Data Table:</b></h4>
+            <table class="table">
+                <thead class="badge-danger">
+                    <tr>
+                        <th>Id</th>
+                        <th>Customer Name</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let order of orders">
+                        <td> {{order.orderId}} </td>
+                        <td> {{order.customerName}} </td>
+                        <td> {{order.product}} </td>
+                        <td> {{order.amount}} </td>
+                        <td 
+                        [ngClass]="{
+                            'text-success' : order.status.toLocaleLowerCase().includes('delivered'),
+                            'text-danger' : !order.status.toLocaleLowerCase().includes('delivered')
+                            }"> {{order.status}} </td>
+                        <td> {{order.date}} </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-warning">edit</mat-chip>
+                            </mat-chip-list>
+
+                        </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-danger text-white">delete</mat-chip>
+                            </mat-chip-list>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="text-danger mt-5 border-top p-2"><b>Movies Data Table:</b></h4>
+            <table class="table">
+                <thead class="badge-success">
+                    <tr>
+                        <th>Id</th>
+                        <th>Movie Title</th>
+                        <th>Movie Type</th>
+                        <th>Rating</th>
+                        <th>Release year</th>
+                        <th>IsHit?</th>
+                        <th>Langauge</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let movie of movies">
+                        <td> {{movie.movieId}} </td>
+                        <td> {{movie.title}} </td>
+                        <td> {{movie.genre}} </td>
+                        <td> {{movie.rating}} </td>
+                        <td> {{movie.releaseYear}} </td>
+                        <td class="text-center">
+                            <span class="bagde p-2" [ngClass]="{
+                            'badge-success' : movie.isHit,
+                            'badge-danger' : !movie.isHit
+                        }"> {{movie.isHit ? "Yes" : "No"}} </span>
+                        </td>
+                        <td> {{movie.language}} </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-warning">edit</mat-chip>
+                            </mat-chip-list>
+
+                        </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-danger text-white">delete</mat-chip>
+                            </mat-chip-list>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="text-secondary"><b>Teachers Data Table:</b></h4>
+            <table class="table">
+                <thead class="badge-info">
+                    <tr>
+                        <th>Teacher Id</th>
+                        <th>Teacher Name</th>
+                        <th>Subject</th>
+                        <th>Experience</th>
+                        <th>Salary</th>
+                        <th>IsFullTime?</th>
+                        <th>Email</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let teacher of teachers">
+                        <td> {{teacher.teacherId}} </td>
+                        <td> {{teacher.name}} </td>
+                        <td> {{teacher.subject}} </td>
+                        <td> {{teacher.experience}} </td>
+                        <td> {{teacher.salary}} </td>
+                        <td class="text-center">
+                            <span class="bagde p-2" [ngClass]="{
+                            'badge-success' : teacher.isFullTime,
+                            'badge-danger' : !teacher.isFullTime
+                        }"> {{teacher.isFullTime ? "Yes" : "No"}} </span>
+                        </td>
+                        <td> {{teacher.email}} </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-warning">edit</mat-chip>
+                            </mat-chip-list>
+
+                        </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-danger text-white">delete</mat-chip>
+                            </mat-chip-list>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="text-info"><b>Vehicles Data Table:</b></h4>
+            <table class="table">
+                <thead class="badge-info">
+                    <tr>
+                        <th>Vehicle Id</th>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Type</th>
+                        <th>Price</th>
+                        <th>IsAvailable</th>
+                        <th>Fuel Type</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let vehicle of vehicles">
+                        <td> {{vehicle.vehicleId}} </td>
+                        <td> {{vehicle.brand}} </td>
+                        <td> {{vehicle.model}} </td>
+                        <td> {{vehicle.type}} </td>
+                        <td> {{vehicle.price}} </td>
+                        <td class="text-center">
+                            <span class="bagde p-2" [ngClass]="{
+                            'badge-success' : vehicle.isAvailable,
+                            'badge-danger' : !vehicle.isAvailable
+                        }"> {{vehicle.isAvailable ? "Yes" : "No"}} </span>
+                        </td>
+                        <td> {{vehicle.fuel}} </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-warning">edit</mat-chip>
+                            </mat-chip-list>
+
+                        </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-danger text-white">delete</mat-chip>
+                            </mat-chip-list>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="text-success mt-3"><b>Hotels Data Table:</b></h4>
+            <table class="table">
+                <thead class="badge-success">
+                    <tr>
+                        <th>Hotel Id</th>
+                        <th>Hotel Name</th>
+                        <th>City</th>
+                        <th>Hotel Rating</th>
+                        <th>Rent /Night</th>
+                        <th>IsAvailable</th>
+                        <th> Rooms Count</th>
+                        <th> Contact</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let hotel of hotels">
+                        <td> {{hotel.hotelId}} </td>
+                        <td> {{hotel.name}} </td>
+                        <td> {{hotel.city}} </td>
+                        <td> {{hotel.rating}} </td>
+                        <td> {{hotel.pricePerNight}} </td>
+                        <td class="text-center">
+                            <span class="bagde p-2" [ngClass]="{
+                            'badge-success' : hotel.isAvailable,
+                            'badge-danger' : !hotel.isAvailable
+                        }"> {{hotel.isAvailable ? "Yes" : "No"}} </span>
+                        </td>
+                        <td> {{hotel.rooms}} </td>
+                        <td> {{hotel.contact}} </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-warning">edit</mat-chip>
+                            </mat-chip-list>
+
+                        </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-danger text-white">delete</mat-chip>
+                            </mat-chip-list>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="text-info"><b>Doctors Data Table:</b></h4>
+            <table class="table">
+                <thead class="badge-info">
+                    <tr>
+                        <th>Doctor Id</th>
+                        <th>Name</th>
+                        <th>Dr. Specialization</th>
+                        <th>Experience</th>
+                        <th>Fees</th>
+                        <th>IsAvailable</th>
+                        <th>Hospital Name</th>
+                        <th>Email</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let doctor of doctors">
+                        <td> {{doctor.doctorId}} </td>
+                        <td> {{doctor.name}} </td>
+                        <td> {{doctor.specialization}} </td>
+                        <td> {{doctor.experience}} </td>
+                        <td> {{doctor.fees}} </td>
+                        <td class="text-center">
+                            <span class="bagde p-2" [ngClass]="{
+                            'badge-success' : doctor.isAvailable,
+                            'badge-danger' : !doctor.isAvailable
+                        }"> {{doctor.isAvailable ? "Yes" : "No"}} </span>
+                        </td>
+                        <td> {{doctor.hospital}} </td>
+                        <td> {{doctor.email}} </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-warning">edit</mat-chip>
+                            </mat-chip-list>
+
+                        </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-danger text-white">delete</mat-chip>
+                            </mat-chip-list>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 class="text-danger"><b>Restaurant Data Table:</b></h4>
+            <table class="table">
+                <thead class="badge-danger">
+                    <tr>
+                        <th>Restaurant Id</th>
+                        <th>Restaurant Name</th>
+                        <th>Cuisine</th>
+                        <th>City</th>
+                        <th>Rating</th>
+                        <th>IsOpen</th>
+                        <th>Veg/Non-Veg</th>
+                        <th>Avg. Cost</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let restaurant of restaurants">
+                        <td> {{restaurant.restId}} </td>
+                        <td> {{restaurant.name}} </td>
+                        <td> {{restaurant.cuisine}} </td>
+                        <td> {{restaurant.city}} </td>
+                        <td> {{restaurant.rating}} </td>
+                        <td class="text-center">
+                            <span class="bagde p-2" [ngClass]="{
+                            'badge-success' : restaurant.isOpen,
+                            'badge-danger' : !restaurant.isOpen
+                        }"> {{restaurant.isOpen ? "Yes" : "No"}} </span>
+                        </td>
+                        <td class="text-center">
+                            <span class="" [ngClass]="{
+                            'text-success' : restaurant.isVeg,
+                            'text-danger' : !restaurant.isVeg
+                        }"> {{restaurant.isVeg ? "Veg" : "Non-Veg"}} </span>
+                        </td>
+                        <td> {{restaurant.avgCost}} </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-warning">edit</mat-chip>
+                            </mat-chip-list>
+
+                        </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-danger text-white">delete</mat-chip>
+                            </mat-chip-list>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="text-info"><b>Bank Data Table:</b></h4>
+            <table class="table">
+                <thead class="badge-info">
+                    <tr>
+                        <th>Account Number</th>
+                        <th>Acc. Holder Name</th>
+                        <th>Bank</th>
+                        <th>Acc. Type</th>
+                        <th>Balence</th>
+                        <th>IsActive</th>
+                        <th>Branch</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let account of accounts">
+                        <td> {{account.accNo}} </td>
+                        <td> {{account.holderName}} </td>
+                        <td> {{account.bank}} </td>
+                        <td> {{account.accType}} </td>
+                        <td> {{account.balance}} </td>
+                        <td class="text-center">
+                            <span class="bagde p-2" [ngClass]="{
+                            'badge-success' : account.isActive,
+                            'badge-danger' : !account.isActive
+                        }"> {{account.isActive ? "Yes" : "No"}} </span>
+                        </td>
+                        <td> {{account.branch}} </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-warning">edit</mat-chip>
+                            </mat-chip-list>
+
+                        </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-danger text-white">delete</mat-chip>
+                            </mat-chip-list>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="text-danger"><b>Flights Data Table:</b></h4>
+            <table class="table">
+                <thead class="badge-danger">
+                    <tr>
+                        <th>Flight Id</th>
+                        <th>AirLine</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Price</th>
+                        <th>Duration</th>
+                        <th>IsDirect</th>
+                        <th>Seats</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let flight of flights">
+                        <td> {{flight.flightId}} </td>
+                        <td> {{flight.airline}} </td>
+                        <td> {{flight.from}} </td>
+                        <td> {{flight.to}} </td>
+                        <td> {{flight.price}} </td>
+                        <td> {{flight.duration}} </td>
+                        <td class="text-center">
+                            <span class="bagde p-2" [ngClass]="{
+                            'badge-success' : flight.isDirect,
+                            'badge-danger' : !flight.isDirect
+                        }"> {{flight.isDirect ? "Yes" : "No"}} </span>
+                        </td>
+                        <td> {{flight.seats}} </td>
+
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-warning">edit</mat-chip>
+                            </mat-chip-list>
+                        </td>
+
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-danger text-white">delete</mat-chip>
+                            </mat-chip-list>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="text-info"><b>Projects Data Table:</b></h4>
+            <table class="table">
+                <thead class="badge-info">
+                    <tr>
+                        <th>Project Id</th>
+                        <th>Title</th>
+                        <th>Client</th>
+                        <th>Budget</th>
+                        <th>Status</th>
+                        <th>Team Size</th>
+                        <th>Is Critical</th>
+                        <th>Deadline</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let project of projects">
+                        <td> {{project.projectId}} </td>
+                        <td> {{project.title}} </td>
+                        <td> {{project.client}} </td>
+                        <td> {{project.budget}} </td>
+                        <td> {{project.status}} </td>
+                        <td> {{project.teamSize}} </td>
+                        <td class="text-center">
+                            <span class="bagde p-2" [ngClass]="{
+                            'badge-success' : project.isCritical,
+                            'badge-danger' : !project.isCritical
+                        }"> {{project.isCritical ? "Yes" : "No"}} </span>
+                        </td>
+                        <td> {{project.isCritical}} </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-warning">edit</mat-chip>
+                            </mat-chip-list>
+
+                        </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-danger text-white">delete</mat-chip>
+                            </mat-chip-list>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 class="text-info"><b>Cities Data Table:</b></h4>
+            <table class="table">
+                <thead class="badge-info">
+                    <tr>
+                        <th> City Id </th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Population</th>
+                        <th>Pincode</th>
+                        <th>City Type</th>
+                        <th>Famous for</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let city of cities">
+                        <td> {{city.cityId}} </td>
+                        <td> {{city.name}} </td>
+                        <td> {{city.state}} </td>
+                        <td> {{city.population}} </td>
+                        <td> {{city.pincode}} </td>
+                        <td class="text-center">
+                            <span class="bagde p-2" [ngClass]="{
+                            'text-success' : city.isMetro,
+                            'text-danger' : !city.isMetro
+                        }"> {{city.isMetro ? "Metro City" : "Normal City"}} </span>
+                        </td>
+                        <td> {{city.famousFor}} </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-warning">edit</mat-chip>
+                            </mat-chip-list>
+
+                        </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-danger text-white">delete</mat-chip>
+                            </mat-chip-list>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="text-success"><b>Vehicles Data Table:</b></h4>
+            <table class="table">
+                <thead class="badge-success">
+                    <tr>
+                        <th>Vehicle Id</th>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Type</th>
+                        <th>Price</th>
+                        <th>IsAvailable</th>
+                        <th>Fuel Type</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let vehicle of vehicles">
+                        <td> {{vehicle.vehicleId}} </td>
+                        <td> {{vehicle.brand}} </td>
+                        <td> {{vehicle.model}} </td>
+                        <td> {{vehicle.type}} </td>
+                        <td> {{vehicle.price}} </td>
+                        <td class="text-center">
+                            <span class="bagde p-2" [ngClass]="{
+                            'badge-success' : vehicle.isAvailable,
+                            'badge-danger' : !vehicle.isAvailable
+                        }"> {{vehicle.isAvailable ? "Yes" : "No"}} </span>
+                        </td>
+                        <td> {{vehicle.fuel}} </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-warning">edit</mat-chip>
+                            </mat-chip-list>
+
+                        </td>
+                        <td>
+                            <mat-chip-list aria-label="Fish selection">
+                                <mat-chip class="bg-danger text-white">delete</mat-chip>
+                            </mat-chip-list>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>

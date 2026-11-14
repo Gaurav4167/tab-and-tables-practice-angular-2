@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+            <h5>By htmlTab Component</h5>
+            <div class="card">
+                <div class="card-body">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link" href='javascript:;' (click)="onSelectSkill('html')" [ngClass]="{
+                                'active' : skills.includes('html')
+                            }">Html</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href='javascript:;' (click)="onSelectSkill('css')" [ngClass]="{
+                                'active' : skills.includes('css')
+                            }">Css</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href='javascript:;' (click)="onSelectSkill('javascript')" [ngClass]="{
+                                active : skills.includes('javascript')
+                            }">JavaScript</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href='javascript:;' (click)="onSelectSkill('typescript')" [ngClass]="{
+                                'active' : skills.includes('typescript')
+                            }">TypeScript</a>
+                        </li>
+                    </ul>
+
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <div *ngIf="skills.includes('html')">
+                                <h2> {{skills.toUpperCase()}} </h2>
+                                <p>HTML is the standard markup language used to create web pages. It provides the basic
+                                    structure of a website using different elements and tags.</p>
+                            </div>
+                            <div *ngIf="skills.includes('css')">
+                                <h2> {{skills.toUpperCase()}} </h2>
+                                <p>CSS is a stylesheet language used to design and style web pages. It controls the
+                                    appearance of HTML elements, such as colors, fonts, sizes, spacing, and layouts.</p>
+                            </div>
+                            <div *ngIf="skills.includes('javascript')">
+                                <h2> {{skills.toUpperCase()}} </h2>
+                                <p>JavaScript is a programming language used to make web pages interactive and dynamic.
+                                    It allows developers to handle events, perform calculations, validate forms, and
+                                    manipulate HTML and CSS. JavaScript can also be used for backend development with
+                                    Node.js. It makes websites more functional and interactive.</p>
+                            </div>
+                            <div *ngIf="skills.includes('typescript')">
+                                <h2> {{skills.toUpperCase()}} </h2>
+                                <p>TypeScript is a strongly typed programming language developed by Microsoft. It is a
+                                    superset of JavaScript that adds static typing and other advanced features.
+                                    TypeScript helps developers identify errors during development and makes code easier
+                                    to maintain.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
