@@ -8,7 +8,8 @@
                             <label class="" for=""><b>TodoItem: </b></label>
                             <input #todoInputReference class="w-100 p-2 form-group" type="text" placeholder="Enter Todo Item">
 
-                            <button (click)="onAddNewTodo(todoInputReference)" class="btn btn-primary shadow w-100">Add Todo</button>
+                            <button *ngIf="!isInEditMode" (click)="onAddNewTodo(todoInputReference)" class="btn btn-primary shadow w-100">Add Todo</button>
+                            <button *ngIf="isInEditMode" (click)="onUpdateTodo()" class="btn btn-primary shadow w-100">Update Todo</button>
                         </div>
 
                     </div>
@@ -22,12 +23,13 @@
                                         </div>
                                         <div class="">
                                             <mat-chip-list aria-label="Fish selection">
-                                                <mat-chip class="bg-warning">edit</mat-chip>
+                                                <mat-chip class="bg-warning" (click) = "onEditTodo(todo)">edit</mat-chip>
 
-                                                <mat-chip class="bg-danger text-white">delete</mat-chip>
+                                                <mat-chip (click)="onRemoveTodo(todo.id)" class="bg-danger text-white">delete</mat-chip>
                                             </mat-chip-list>
+                                            <!-- <button (click)="">Edit</button> -->
                                         </div>
-                                    </div>
+                                    </div> 
                                 </div>
                             </div>
                         </div>
